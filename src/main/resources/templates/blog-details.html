@@ -10,15 +10,13 @@
 <header th:insert="blocks/header :: header">
 </header>
 
-<div class="container mt-5">
-    <h1>
-        Website Blog
-    </h1>
-    <div th:each="el: ${posts}" class="alert alert-info mt-2">
-        <h3 th:text="${el.anons}"/>
-        <p th:text="${el.title}"/>
-        <a th:href="'/blog/'+ ${el.id}" class="btn btn-warning">In details</a>
-    </div>
+<div class="alert alert-info mt-2">
+    <h1 th:text="${post.title}"></h1>
+    <p th:text="${post.full_text}"></p>
+    <p>Views: <span th:text="${post.views}"></span></p>
+
+    <a th:href="'/blog/' + ${post.id} + '/edit'" class="btn btn-warning">Edit</a>
+    <a th:href="'/blog/' + ${post.id} + '/remove'" class="btn btn-danger">Delete</a>
 </div>
 
 
