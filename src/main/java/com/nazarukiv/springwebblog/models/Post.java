@@ -11,7 +11,12 @@ public class Post{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title, anons, full_text;
+    private String title;
+    private String anons;
+
+    @jakarta.persistence.Lob
+    private String full_text;
+
     private int views;
 
     public Post() {
